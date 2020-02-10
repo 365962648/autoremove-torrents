@@ -18,5 +18,4 @@ class FreeSpaceCondition(ConditionWithSort):
             if free_space < self._min:
                 free_space += torrent.size
                 self.remove.add(torrent)
-            else:
-                self.remain.add(torrent)
+        self.remain = set(torrents).difference(self.remove)

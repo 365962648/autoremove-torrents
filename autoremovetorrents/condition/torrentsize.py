@@ -17,4 +17,5 @@ class TorrentSizeCondition(ConditionWithSort):
                 size_sum += torrent.size
                 self.remain.add(torrent)
             else:
-                self.remove.add(torrent)
+                break
+        self.remove = set(torrents).difference(self.remain)
